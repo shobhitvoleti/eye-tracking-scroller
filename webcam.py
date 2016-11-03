@@ -1,8 +1,7 @@
 import cv2
 import sys
 import numpy as np
-## TODO: MAKE into a Function
-
+#TODo make function
 cascPath = sys.argv[1]
 faceCascade = cv2.CascadeClassifier(cascPath)
 
