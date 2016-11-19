@@ -1,6 +1,7 @@
 import cv2
 import sys
 import numpy as np
+## TODO: MAKE into a Function
 
 cascPath = sys.argv[1]
 faceCascade = cv2.CascadeClassifier(cascPath)
@@ -20,7 +21,7 @@ while True:
         minSize=(30, 30),
         flags=cv2.cv.CV_HAAR_SCALE_IMAGE
     )
-    # Draw a rectangle around the faces
+    # Draw a rectangle around the eyes
     xe=0
     ye=0
     for (x, y, w, h) in faces:
