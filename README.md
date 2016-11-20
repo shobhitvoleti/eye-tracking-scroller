@@ -33,6 +33,7 @@ Below is a description of both halves of the whole
 
 The dependancies can be installed by running 
 > python setup.py build
+
 > python setup.py install
 
 On the command line or Terminal
