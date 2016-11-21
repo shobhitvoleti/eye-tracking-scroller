@@ -3,6 +3,9 @@ from setuptools import setup, find_packages
 
 requires = ["numpy","pypdfocr","Pillow","opencv-python"]
 
+
+
+
 setup(
         name="VisualScrollingAid",
         version="1.0",

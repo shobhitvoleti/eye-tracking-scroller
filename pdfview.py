@@ -18,13 +18,16 @@ class MyImage(Frame):
 
         self.master.geometry("%dx%d+%d+%d" % (w, h, x, y))
 
-        __f_tmp=glob.glob(pdfImg.PyGs({}).make_img_from_pdf("Tkinter.pdf")[1])[0]
+        __f_tmp=glob.glob(pdfImg.PyGs({}).make_img_from_pdf("test.pdf")[1])[0]
         #                             ^ this is needed for an "default"-Config
         img=Image.open(__f_tmp)
         pic = ImageTk.PhotoImage(img)
         label = Label(self, image = pic)
         label.image = pic
         label.pack()
+        scrollbar = Scrollbar(master)
+        scrollbar.pack(side = LEFT, fill=Y)
+        scrollbar.config(command = self.master.yview)
 
 
     def showEnd(event):
