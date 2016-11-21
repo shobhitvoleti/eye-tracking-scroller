@@ -29,7 +29,7 @@ class TestsNodandScroll(unittest.TestCase):
         self.assertEqual(directive,1)
 
     def test_check_if_correct_directive_for_staying(self):
-        directive1=ns.scroll_pdf(250,[220,280,260,270,290,275])
+        directive1=ns.scroll_pdf(250,[220,180,260,270,290,275])
         self.assertEqual1(directive1,0)
         directive2=ns.scroll_pdf(250,[220,240,260,270,200])
         self.assertEqual1(directive2,0)
@@ -47,7 +47,7 @@ class TestsNodandScroll(unittest.TestCase):
         self.assertEqual(directive,1)
 
     def test_check_if_correct_directive_for_staying_on_current_page(self):
-        directive1=ns.next_page(250,[220,280,260,270,290,275])
+        directive1=ns.next_page(250,[220,180,260,270,290,275])
         self.assertEqual1(directive1,0)
         directive2=ns.next_page(250,[220,240,260,270,200])
         self.assertEqual1(directive2,0)
