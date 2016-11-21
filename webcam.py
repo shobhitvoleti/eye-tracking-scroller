@@ -58,6 +58,8 @@ def get_eyes(eyes, fd):
             ye = ye / len(eyes) + fd[1]
             # cv2.circle(frame, (xe,ye),2, (0,255,0),8)
             return (xe, ye)
+        else:
+            return (-2000,-2000)
     else:
         return (-2000,-2000)
 
@@ -85,8 +87,8 @@ def call_for_eyecoords(frame):
             gray,
             scaleFactor=1.1,
             minNeighbors=5,
-            minSize=(30, 30),
-            flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
+            minSize=(30, 30))
+            #flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
         face_tracked = get_face(faces)
         if not face_tracked == ([-2000,-2000,-2000,-2000],-2000):
             face_gray = gray[
@@ -98,13 +100,9 @@ def call_for_eyecoords(frame):
                 face_gray,
                 scaleFactor=1.1,
                 minNeighbors=5,
-                minSize=(30, 30),
-                flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
-
-            if get_eyes(eyes, face_tracked) is not None:
-                eye_coords = get_eyes(eyes, face_tracked)
-            else: eye_coords = [0,0]
-
+                minSize=(30, 30))
+                #flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
+            eye_coords = get_eyes(eyes, face_tracked)
             xf = face_tracked[0] + face_tracked[2] / 2
             yf = face_tracked[1] + face_tracked[3] / 2
         else:
