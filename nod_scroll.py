@@ -1,6 +1,5 @@
 import numpy as np
 
-
 def scroll_pdf(y_avg, y_window):
     """
     Function that decides whether to scroll or not
@@ -48,13 +47,13 @@ def next_page(x_avg, x_window):
     """
     mean_x = np.mean(x_window)
     x_area = sum(x_window) - (len(x_window)) * x_window[0]
-    threshold = 200
+    threshold_x = 200
     if x_area > threshold_x:
         if mean_x >= x_avg:
             return 1
         else:
             return 0
-    elif x_area < -threshold:
+    elif x_area < -threshold_x:
         if mean_x > x_avg:
             return 0
         else:

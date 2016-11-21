@@ -18,3 +18,11 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+test:
+		python test_tracker_gestures.py
+
+.PHONY: clean
+clean:
+		rm -rf __pycache__/
+		rm -f *.pyc
