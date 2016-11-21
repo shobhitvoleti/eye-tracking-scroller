@@ -100,11 +100,7 @@ def call_for_eyecoords(frame):
                 minNeighbors=5,
                 minSize=(30, 30),
                 flags=cv2.cv.CV_HAAR_SCALE_IMAGE)
-
-            if get_eyes(eyes, face_tracked) is not None:
-                eye_coords = get_eyes(eyes, face_tracked)
-            else: eye_coords = [0,0]
-
+            eye_coords = get_eyes(eyes, face_tracked)
             xf = face_tracked[0] + face_tracked[2] / 2
             yf = face_tracked[1] + face_tracked[3] / 2
         else:
